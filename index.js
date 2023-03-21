@@ -1,6 +1,6 @@
-// const bookList = document.querySelector('#bookList');
+const bookList = document.querySelector('#bookList');
 const addBtn = document.getElementById('addBtn');
-let collection = JSON.parse(localStorage.getItem('bookCollection')) ||[];
+let collection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 function renderCollection() {
   let html = '';
