@@ -31,6 +31,8 @@ function addBook() {
     collection.push(book);
     localStorage.setItem('bookCollection', JSON.stringify(collection));
     renderCollection();
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
   }
 }
 renderCollection();
