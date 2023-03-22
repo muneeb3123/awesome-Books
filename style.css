@@ -58,3 +58,14 @@ body {
   .form {
     display: flex;
   }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #collectionTitle { 
+    width: 100vw;
+    text-align: center;
+  }
