@@ -1,0 +1,60 @@
+body {
+    background-image: linear-gradient(to bottom, #F3F3F3, #E0E0E0);
+  }
+  
+  #bookList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .book {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+    justify-content: space-between;
+  }
+  
+  .book:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+  
+  .book > div:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .book button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book button:hover {
+    background-color: #347f2d;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bookTitle {
+    font-weight: 900;
+  }
+
+  .form {
+    display: flex;
+  }
