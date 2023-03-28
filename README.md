@@ -28,6 +28,8 @@
 
 # 📖 [Protfolio-project] <a name="about-project"></a>
 
+In this project I create Awesome books which add and remove book and preserve it in local storage with the help of javascript es6 in which i use javascript classes ,arrow functions and use let and const variables.
+
 ## 🛠 Built With <a name="visual studio">HTML5</a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -44,11 +46,9 @@
 ### Key Features <a name="key-features"></a>
 
 > Describe between 1-3 key features of the application.
-
-- **It has linters**
-- **It has MIT license**
-- **It has html**
-- **It has javascript**
+- **It has javascript es6**
+-**It has arrow functions**
+-**It has javascript Classes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,22 +92,19 @@ Step 2: Locate the folder where you cloned your project to and open the `index.h
 - Twitter: [@Hafizabd4](https://twitter.com/Hafizabd4)
 - LinkedIn: (https://www.linkedin.com/in/muneeb-rehman-01b6bb193/)
 
- **Alejandro**
-
-- GitHub: [@muneeb3123](https://github.com/VelzckC0D3)
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 - **More detailed**
-- **Master HTML**
+- **Master Javascript**
 - **Master CSS**
--
+-**improve javascript modules knownledge**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 ## 📼 Project Walkthrough <a name="project-walk"></a>
 
-- [Project Walkthrough Link](https://www.loom.com/share/3361108217a04b6f87ee5e85a4bad2ea)
+- currently I dont have.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,7 +131,7 @@ Give a ⭐️ if you like this project!
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-"Special thanks to my coding partner "Alejandro " for their invaluable contributions to this project. Their dedication, skills, and collaborative spirit were essential to our success."
+"Special thanks to my coding partner "Chris Mutugi " for their invaluable contributions to this project. Their dedication, skills, and collaborative spirit were essential to our success."
 
 
 <!-- LICENSE -->
