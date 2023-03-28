@@ -1,9 +1,9 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-return-assign */
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
+
 const showTime = document.querySelector('.showTime');
 
 const currentTime = () => {
-  const dateTime = luxon.DateTime.local();
+  const dateTime = DateTime.local();
   showTime.innerHTML = dateTime.toFormat('MMMM d, yyyy - hh:mm:ss a');
 };
 

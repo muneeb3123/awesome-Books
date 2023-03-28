@@ -1,15 +1,8 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable max-classes-per-file */
-import currentTime from './modules/showtime.js';
 import { addClick, contactClick, listClick } from './modules/operations.js';
 import variables from './modules/link.js';
+import Book from './modules/book.js';
+import currentTime from './modules/showtime.js';
 
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
 class ShowBook {
   constructor() {
     this.bookList = variables.booklist;
@@ -18,10 +11,9 @@ class ShowBook {
     this.addBtn.addEventListener('click', () => {
       this.addBook();
     });
-    this.renderCollection();
   }
 
-  renderCollection() {
+  renderCollection = () => {
     let html = '';
     this.collection.forEach((element) => {
       html += `<div class='book'>
@@ -41,7 +33,7 @@ class ShowBook {
     });
   }
 
-  addBook() {
+  addBook = () => {
     if (variables.Title.value && variables.Author.value) {
       this.book = new Book(variables.Title.value, variables.Author.value);
       this.collection.push(this.book);
@@ -52,7 +44,7 @@ class ShowBook {
     }
   }
 
-  removeBook(element, bookIndex) {
+  removeBook = (element, bookIndex) => {
     this.collection = this.collection.filter(
       (element, index) => index !== bookIndex,
     );
@@ -71,6 +63,7 @@ variables.ContactLink.addEventListener('click', contactClick);
 
 // Show Time
 
-// eslint-disable-next-line no-unused-vars
 const RunTime = new ShowBook();
 setInterval(currentTime, 1000);
+
+RunTime.renderCollection();
