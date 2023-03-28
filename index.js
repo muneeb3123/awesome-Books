@@ -1,39 +1,76 @@
-const bookList = document.querySelector('#bookList');
-const addBtn = document.getElementById('addBtn');
-let collection = JSON.parse(localStorage.getItem('bookCollection')) || [];
+/* eslint-disable no-use-before-define */
+/* eslint-disable max-classes-per-file */
+import currentTime from './modules/showtime.js';
+import { addClick, contactClick, listClick } from './modules/operations.js';
+import variables from './modules/link.js';
 
-function renderCollection() {
-  let html = '';
-  collection.forEach((element, index) => {
-    const removeBtn = `<button onclick='removeBook(${index})'>Remove</button>`;
-    html += `<div class='book'>
-        <div>${element.title}</div>
-        <div>${element.author}</div>
-        ${removeBtn}
-        <hr>
-        </div>`;
-  });
-  bookList.innerHTML = html;
-}
-
-// eslint-disable-next-line no-unused-vars
-function removeBook(bookIndex) {
-  collection = collection.filter((element, index) => index !== bookIndex);
-  localStorage.setItem('bookCollection', JSON.stringify(collection));
-  renderCollection();
-}
-
-function addBook() {
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  if (title && author) {
-    const book = { title, author };
-    collection.push(book);
-    localStorage.setItem('bookCollection', JSON.stringify(collection));
-    renderCollection();
-    document.getElementById('title').value = '';
-    document.getElementById('author').value = '';
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
 }
-renderCollection();
-addBtn.addEventListener('click', addBook);
+class ShowBook {
+  constructor() {
+    this.bookList = variables.booklist;
+    this.addBtn = variables.addBtn;
+    this.collection = JSON.parse(localStorage.getItem('bookCollection')) || [];
+    this.addBtn.addEventListener('click', () => {
+      this.addBook();
+    });
+    this.renderCollection();
+  }
+
+  renderCollection() {
+    let html = '';
+    this.collection.forEach((element) => {
+      html += `<div class='book'>
+            <span class=' white lists-header'>
+             <p class='title-header bold'>${element.title}</p>
+             <p class='author-header bold'>${element.author}</p>
+             <button class='RemoveButton'>Remove</button>
+         </span>
+                 </div>`;
+    });
+    this.bookList.innerHTML = html;
+    this.removeBtns = document.querySelectorAll('.RemoveButton');
+    this.removeBtns.forEach((element, index) => {
+      element.addEventListener('click', () => {
+        this.removeBook(element, index);
+      });
+    });
+  }
+
+  addBook() {
+    if (variables.Title.value && variables.Author.value) {
+      this.book = new Book(variables.Title.value, variables.Author.value);
+      this.collection.push(this.book);
+      localStorage.setItem('bookCollection', JSON.stringify(this.collection));
+      this.renderCollection();
+      variables.Title.value = '';
+      variables.Author.value = '';
+    }
+  }
+
+  removeBook(element, bookIndex) {
+    this.collection = this.collection.filter(
+      (element, index) => index !== bookIndex,
+    );
+    localStorage.setItem('bookCollection', JSON.stringify(this.collection));
+    this.renderCollection();
+  }
+}
+
+// NavBar Links
+
+variables.ListLink.addEventListener('click', listClick);
+
+variables.AddLink.addEventListener('click', addClick);
+
+variables.ContactLink.addEventListener('click', contactClick);
+
+// Show Time
+
+// eslint-disable-next-line no-unused-vars
+const RunTime = new ShowBook();
+setInterval(currentTime, 1000);
