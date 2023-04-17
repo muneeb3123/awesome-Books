@@ -2,6 +2,7 @@ import { addClick, contactClick, listClick } from './modules/operations.js';
 import variables from './modules/link.js';
 import Book from './modules/book.js';
 import currentTime from './modules/showtime.js';
+import { toastMixin } from './modules/animation.js';
 
 class ShowBook {
   constructor() {
@@ -39,6 +40,10 @@ class ShowBook {
       this.collection.push(this.book);
       localStorage.setItem('bookCollection', JSON.stringify(this.collection));
       this.renderCollection();
+      toastMixin.fire({
+        animation: true,
+        title: 'Book Added',
+      });
       variables.Title.value = '';
       variables.Author.value = '';
     }
@@ -50,6 +55,10 @@ class ShowBook {
     );
     localStorage.setItem('bookCollection', JSON.stringify(this.collection));
     this.renderCollection();
+    toastMixin.fire({
+      animation: true,
+      title: 'Book Removed',
+    });
   }
 }
 

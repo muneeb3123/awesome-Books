@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-
 .check {
   height: 100%;
   padding: 0 3%;
@@ -61,6 +58,7 @@ ul {
   display: flex;
   justify-content: center;
   font-size: 4rem;
+  font-family: "Satisfy", cursive;
 }
 
 .main-lists {
@@ -72,8 +70,11 @@ ul {
 }
 
 .lists-header {
-  display: flex;
-  gap: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 30px;
+  border-radius: 15px;
+  align-items: baseline;
 }
 
 .bold {
@@ -150,6 +151,8 @@ form button {
   color: white;
   margin: 10px;
   border-radius: 5px;
+  width: 70px;
+  height: 40px;
 }
 
 .display-none {
